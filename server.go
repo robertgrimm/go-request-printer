@@ -44,5 +44,6 @@ func (rp *RequestPrinter) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 	handler := &RequestPrinter{}
+	fmt.Println("Listening on port", port)
 	log.Fatal(http.ListenAndServe(fmt.Sprintf(":%d", port), handler))
 }
