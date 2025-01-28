@@ -1,2 +1,4 @@
 go-request-printer
+server.crt
+server.key
 .idea
