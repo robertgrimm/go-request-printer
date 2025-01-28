@@ -39,7 +39,7 @@ func (rp *RequestPrinter) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	fmt.Println("Body:")
+	fmt.Println("=== Start of body ===")
 	var prettyJSON bytes.Buffer
 	err = json.Indent(&prettyJSON, body, "", "  ")
 	if err == nil {
@@ -47,7 +47,7 @@ func (rp *RequestPrinter) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	} else {
 		fmt.Println(string(body))
 	}
-
+	fmt.Println("=== End of body ===")
 	fmt.Println()
 }
 
